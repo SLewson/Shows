@@ -25,6 +25,13 @@ class ShowViewController: UIViewController {
         else {
             print("ruh-roh")
         }
+        
+        let showsApi = ShowsAPI()
+        
+        showsApi.getMessage() {(message: String, error: NSError?) in
+            print("message = " + message)
+        }
+
     }
 
     override func didReceiveMemoryWarning() {

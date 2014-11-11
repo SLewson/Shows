@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>1AEFA5E5-39FA-4CD5-A272-EF7238D7173E</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Shows</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>8AA276666F6C8D2A68A5CB577A86F929B7A0554F</key>
+		<string>https://github.com/SLewson/Shows.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>ShowApp/Shows.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>8AA276666F6C8D2A68A5CB577A86F929B7A0554F</key>
+		<string>../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/SLewson/Shows.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>8AA276666F6C8D2A68A5CB577A86F929B7A0554F</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>8AA276666F6C8D2A68A5CB577A86F929B7A0554F</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Shows</string>
+		</dict>
+	</array>
+</dict>
+</plist>
