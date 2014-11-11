@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  devise_for :users
     root "home#show"
     resources :shows, only: [:index, :show] do
       resources :episodes, only: [:index, :show]
