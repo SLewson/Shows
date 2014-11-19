@@ -6,6 +6,10 @@ Rails.application.routes.draw do
       resources :episodes, only: [:index, :show]
     end
     get "shows/search/:name"=>"shows#search"
+    get "users/index"=>"users#index"
+    get "profiles/add_favorite/:id" => "profiles#add_favorite"
+    get "profiles/get_favorites" => "profiles#get_favorites"
+    resources :profiles, only: [:index, :show]
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

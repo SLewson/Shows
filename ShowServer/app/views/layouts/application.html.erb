@@ -7,7 +7,9 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
+<% if user_signed_in? %>
+  <div style="text-align: right; width: 100%;"><%= link_to "Logout", destroy_user_session_path(current_user), method: :delete %></div>
+<% end %>
 <p class="notice"><%= notice %></p>
        <p class="alert"><%= alert %></p>
 

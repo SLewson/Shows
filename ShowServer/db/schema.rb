@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141111211515) do
+ActiveRecord::Schema.define(version: 20141119231041) do
 
   create_table "episodes", force: true do |t|
     t.integer  "show_id"
@@ -32,6 +32,11 @@ ActiveRecord::Schema.define(version: 20141111211515) do
     t.integer  "hulu_id"
   end
 
+  create_table "shows_users", id: false, force: true do |t|
+    t.integer "user_id"
+    t.integer "show_id"
+  end
+
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
@@ -49,10 +54,5 @@ ActiveRecord::Schema.define(version: 20141111211515) do
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
-
-  create_table "users_shows", id: false, force: true do |t|
-    t.integer "user_id"
-    t.integer "show_id"
-  end
 
 end
