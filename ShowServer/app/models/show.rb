@@ -46,7 +46,7 @@ def self.load_episodes(show_id, show)
       logger.info "Show: #{show_id}: found episode #{ep_name} from show #{ep_show_id}"
       if ep_show_id.to_s.eql? show_id.to_s
         logger.info "Creating episode for #{ep_id}: #{ep_name}"
-        Episode.create(hulu_video_id: ep_id.to_i, name: ep_name, description: ep_description, show: show)
+        Episode.create(hulu_video_id: ep_id.to_i, name: ep_name, description: ep_description, show: show, rating: ep_rating)
       end
     end
   end
