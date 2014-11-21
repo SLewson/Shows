@@ -57,6 +57,7 @@ class HuluApi
 
   def search(query, items_per_page, page)
     url = sprintf(SEARCH_URL, "Hulu", query, items_per_page, page)
+    Rails.logger.info "\n\n --- HULU API SEARCH ---\n\nHitting url: \n#{url}\n\n"
     return execute_get_for_url(url)
   end
 
