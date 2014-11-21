@@ -11,11 +11,29 @@ class ProfilesController < ApplicationController
   end
 
   def add_favorite
-    @show = Show.find(params[:id])
-    current_user.shows << @show
-    #logger.info "add_favorte #{params[:id]}"
-    render json: '{"status":"success"}'
-    #render json: current_user.shows
+    if @show = Show.find(params[:id])
+      if !current_user.shows.include?(@show)
+        current_user.shows << @show
+        render json: '{"status":"success"}'
+      else
+        render json: '{"status":"repeat"}'
+      end
+    else
+      render json: '{"status":"not found"}'
+    end
+  end
+
+  def remove_favorite
+    if @show = Show.find(params[:id])
+      if current_user.shows.include?(@show)
+        current_user.shows.delete(@show)
+        render json: '{"status":"deleted"}'
+      else
+        render json: '{"status":"not a favorite"}'
+      end
+    else
+      render json: '{"status":"show not in database"}'
+    end
   end
 
   def get_favorites

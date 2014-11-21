@@ -28,13 +28,14 @@ class HuluApi
     url = sprintf(BUILD_URL, type)
 
     parameters.each do |param_key, param_value|
-      url += "?#{param_key}=#{param_value}"
+      url += "&#{param_key}=#{param_value}"
     end
 
     return url
   end
 
   def execute_get_for_url(url)
+    Rails.logger.info "\n\n --- HULU API ---\n\nHitting url: \n#{url}\n\n"
     source = Net::HTTP.get_response(URI.parse(url))
     return source.body
   end
@@ -60,11 +61,13 @@ class HuluApi
   end
 
   def get_videos_for_show_by_id(show_id, limit, order_by, page, total_only)
-    parameters = {KEY_LIMIT => limit,
-                    "order_by" => order_by,
-                    "page" => page,
-                    "show_id" => show_id,
-                    "total" => total_only}
+    Rails.logger.info "get_videos_for_show_by_id"
+    parameters = {"order_by" => order_by,
+                  "limit" => limit,
+                  "show_id" => show_id,
+                  "page" => page,
+                  "show_id" => show_id,
+                  "total" => total_only}
     url = build_url(TYPE_VIDEOS, parameters)
     return execute_get_for_url(url)
   end
