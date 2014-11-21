@@ -16,7 +16,10 @@ class Show < ActiveRecord::Base
         logger.info "Probably not getting here"
         id = video['show']['id']
         name = video['show_name']
-        @show = Show.create(hulu_id: id, name: name)
+        description = video['show']['description']
+        genre = video['show']['genre']
+        logger.info "Genre: #{genre}, Description: #{description}"
+        @show = Show.create(hulu_id: id, name: name, description: description, genre: genre)
         logger.info "   Found: #{id}, #{name}"
         @id = id if name.downcase.eql? show_name.downcase
       end
@@ -39,6 +42,7 @@ def self.load_episodes(show_id, show)
       ep_show_id = episode['show_id']
       ep_description = episode['description']
       ep_type = episode['video_type']
+      ep_rating = episode['rating']
       logger.info "Show: #{show_id}: found episode #{ep_name} from show #{ep_show_id}"
       if ep_show_id.to_s.eql? show_id.to_s
         logger.info "Creating episode for #{ep_id}: #{ep_name}"

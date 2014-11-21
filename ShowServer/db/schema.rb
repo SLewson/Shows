@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141119231041) do
+ActiveRecord::Schema.define(version: 20141121062403) do
 
   create_table "episodes", force: true do |t|
     t.integer  "show_id"
@@ -20,6 +20,8 @@ ActiveRecord::Schema.define(version: 20141119231041) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "hulu_video_id"
+    t.float    "rating"
+    t.string   "type"
   end
 
   add_index "episodes", ["show_id"], name: "index_episodes_on_show_id"
@@ -30,6 +32,8 @@ ActiveRecord::Schema.define(version: 20141119231041) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "hulu_id"
+    t.string   "description"
+    t.string   "genre"
   end
 
   create_table "shows_users", id: false, force: true do |t|
