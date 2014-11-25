@@ -19,7 +19,6 @@ class ShowsTableViewController: UITableViewController {
         showsApi.getAllShows() {(shows: [Show]?, error: NSError?) in
             if let shows = shows {
                 self.shows = shows
-                print("reload tableview")
                 dispatch_async(dispatch_get_main_queue(), { () -> Void in
                     self.tableView.reloadData()
                 })
@@ -68,13 +67,14 @@ class ShowsTableViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        self.performSegueWithIdentifier("show_show", sender: self)
+        self.performSegueWithIdentifier("show_show", sender: indexPath)
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if (segue.identifier == "show_show") {
             var nextController = segue.destinationViewController as ShowViewController
-            nextController.test = "Hi Ian!"
+            var indexPath = sender as NSIndexPath
+            nextController.show = shows[indexPath.row]
         }
     }
     

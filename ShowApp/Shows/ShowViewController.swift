@@ -10,7 +10,7 @@ import UIKit
 
 class ShowViewController: UIViewController {
 
-    public var test: NSString?
+    public var show: Show?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,16 +19,9 @@ class ShowViewController: UIViewController {
     }
     
     override func viewDidAppear(animated: Bool) {
-        if let test = test {
-            print(test)
+        if let show = show {
+            print(show.description)
         }
-        else {
-            print("ruh-roh")
-        }
-        
-        let showsApi = ShowsAPI()
-        
-        
 
     }
 
