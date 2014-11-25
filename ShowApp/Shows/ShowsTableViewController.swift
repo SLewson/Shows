@@ -18,9 +18,11 @@ class ShowsTableViewController: UITableViewController {
         var showsApi = ShowsAPI()
         showsApi.getAllShows() {(shows: [Show]?, error: NSError?) in
             if let shows = shows {
-                for show in shows {
-                    print(show.name)
-                }
+                self.shows = shows
+                print("reload tableview")
+                dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                    self.tableView.reloadData()
+                })
             }
         }
 
@@ -57,7 +59,9 @@ class ShowsTableViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath) as UITableViewCell
+        cell.textLabel.text = shows[indexPath.row].name
 
+        print("array size: \(shows.count)")
         // Configure the cell...
 
         return cell
