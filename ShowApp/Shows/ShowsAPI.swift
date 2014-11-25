@@ -10,30 +10,24 @@ import Foundation
 
 class ShowsAPI {
     
-    func getMessage(completionHandler:(message: String, error: NSError?)->()) -> Void {
+    func getAllShows(completionHandler:(shows: [Show]?, error: NSError?)->()) -> Void {
         let session = NSURLSession.sharedSession()
         
-        let task1 = session.dataTaskWithURL(NSURL(string: "http://localhost:3000")!, completionHandler: { (data, response, error) -> Void in
+        let task1 = session.dataTaskWithURL(NSURL(string: "http://localhost:3000/shows")!, completionHandler: { (data, response, error) -> Void in
             
             var error: NSError?
-            if let jsonDict = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.MutableContainers, error: &error){
-                
+            if let jsonArray = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.MutableContainers, error: &error){
                 if let error = error {
                     print(error)
+                    completionHandler(shows: nil, error: error)
                 }
-                if let jsonDictionary = jsonDict as? NSDictionary {
-                    //print(jsonDict["message"])
-                    if let message = jsonDict["message"] as? String {
-                        
-                        completionHandler(message: message, error: nil)
+                if let showArray = jsonArray as? NSArray {
+                    var shows: [Show] = []
+                    for showJsonDict in showArray {
+                        shows.append(Show(jsonDict: showJsonDict as NSDictionary))
                     }
+                    completionHandler(shows: shows, error: nil)
                 }
-                else {
-                    completionHandler(message: "", error: nil)
-                }
-            }
-            else {
-                completionHandler(message: "", error: nil)
             }
         })
         task1.resume()

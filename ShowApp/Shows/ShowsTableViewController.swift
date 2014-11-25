@@ -10,10 +10,21 @@ import UIKit
 
 class ShowsTableViewController: UITableViewController {
 
+    var shows: [Show] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        print("test")
+        var showsApi = ShowsAPI()
+        showsApi.getAllShows() {(shows: [Show]?, error: NSError?) in
+            if let shows = shows {
+                for show in shows {
+                    print(show.name)
+                }
+            }
+        }
+
+        
         
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -40,7 +51,7 @@ class ShowsTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete method implementation.
         // Return the number of rows in the section.
-        return 10
+        return shows.count
     }
 
     

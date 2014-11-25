@@ -28,9 +28,7 @@ class ShowViewController: UIViewController {
         
         let showsApi = ShowsAPI()
         
-        showsApi.getMessage() {(message: String, error: NSError?) in
-            print("message = " + message)
-        }
+        
 
     }
 
