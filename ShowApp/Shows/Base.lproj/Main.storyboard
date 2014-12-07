@@ -5,15 +5,15 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Login View Controller-->
         <scene sceneID="M2L-LZ-xml">
             <objects>
-                <viewController id="V8Y-oq-tdf" sceneMemberID="viewController">
+                <viewController id="V8Y-oq-tdf" customClass="LoginViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="U2O-0O-BZG"/>
                         <viewControllerLayoutGuide type="bottom" id="piE-P5-Lgc"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="g9v-TW-mdV">
+                    <view key="view" contentMode="scaleToFill" id="g9v-TW-mdV" customClass="l">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -27,6 +27,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
+                                    <action selector="didPressLogin:" destination="V8Y-oq-tdf" eventType="touchUpInside" id="i6R-LS-glC"/>
                                     <segue destination="eZ3-NT-mks" kind="show" id="5hw-Kx-WV3"/>
                                 </connections>
                             </button>
@@ -83,6 +84,10 @@
                             <constraint firstAttribute="centerY" secondItem="zX1-in-egP" secondAttribute="centerY" constant="33" id="xP0-zn-8vV"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="password" destination="hRu-LN-Ivj" id="nIw-Zb-4l4"/>
+                        <outlet property="username" destination="rKW-Qx-asm" id="RXr-6v-uJ4"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ENJ-pH-Cu1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
