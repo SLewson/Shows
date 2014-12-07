@@ -58,7 +58,7 @@ class ShowsTableViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath) as UITableViewCell
-        cell.textLabel.text = shows[indexPath.row].name
+        cell.textLabel!.text = shows[indexPath.row].name
 
         print("array size: \(shows.count)")
         // Configure the cell...

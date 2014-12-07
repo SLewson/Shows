@@ -18,6 +18,8 @@ class AddShowsTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        //self.tableView.contentOffset = CGPoint(x: 0, y: 40);
+        self.automaticallyAdjustsScrollViewInsets = true
     }
 
     override func didReceiveMemoryWarning() {
