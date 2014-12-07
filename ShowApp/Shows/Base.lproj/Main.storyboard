@@ -189,11 +189,11 @@
                                     <constraint firstAttribute="width" constant="20" id="uAa-sL-esN"/>
                                 </constraints>
                             </activityIndicatorView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0QA-8L-MqA">
-                                <rect key="frame" x="279" y="327" width="42" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Searching..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0QA-8L-MqA">
+                                <rect key="frame" x="213" y="325" width="175" height="21"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="42" id="OQa-kP-eZ4"/>
-                                    <constraint firstAttribute="height" constant="21" id="tHy-iA-b6M"/>
+                                    <constraint firstAttribute="width" constant="175" id="MG5-Pi-fYs"/>
+                                    <constraint firstAttribute="height" constant="21" id="kpA-mo-Dtk"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -202,14 +202,14 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="0QA-8L-MqA" firstAttribute="top" secondItem="qoY-91-Zxj" secondAttribute="bottom" constant="17" id="55F-HO-Ocg"/>
                             <constraint firstItem="vjg-rD-vyu" firstAttribute="top" secondItem="Hae-PY-T2E" secondAttribute="bottom" id="GRW-qL-Kp9"/>
                             <constraint firstAttribute="centerX" secondItem="vjg-rD-vyu" secondAttribute="centerX" id="Iqc-bb-paV"/>
                             <constraint firstAttribute="trailingMargin" secondItem="vjg-rD-vyu" secondAttribute="trailing" constant="-16" id="L4L-e8-gHj"/>
                             <constraint firstItem="vjg-rD-vyu" firstAttribute="leading" secondItem="gth-Cw-js7" secondAttribute="leadingMargin" constant="-16" id="Rl2-ws-qb7"/>
+                            <constraint firstItem="0QA-8L-MqA" firstAttribute="top" secondItem="qoY-91-Zxj" secondAttribute="bottom" constant="15" id="XJ4-S9-7fv"/>
                             <constraint firstAttribute="centerY" secondItem="qoY-91-Zxj" secondAttribute="centerY" id="ceF-q9-c7p"/>
+                            <constraint firstAttribute="centerX" secondItem="0QA-8L-MqA" secondAttribute="centerX" constant="-0.5" id="h1B-zA-FM6"/>
                             <constraint firstAttribute="centerX" secondItem="qoY-91-Zxj" secondAttribute="centerX" id="ti0-qv-LWT"/>
-                            <constraint firstAttribute="centerX" secondItem="0QA-8L-MqA" secondAttribute="centerX" id="tie-vb-whd"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Add Show" image="search" id="Nn4-lB-ytG"/>
