@@ -38,8 +38,10 @@ class ShowsAPI {
     }
     
     func getSearchResults(query: String, completionHandler: (shows: [Show]?, error: NSError?)->()) -> Void {
-        let searchTask = session.dataTaskWithURL(NSURL(string: "http://localhost:3000/shows/search/\(query)")!, completionHandler: {
+        println("getSearchResults")
+        let searchTask = session.dataTaskWithURL(NSURL(string: "http://localhost:3000/shows/search/arrow")!, completionHandler: {
             (data, response, error) -> Void in
+            println(response)
             var error: NSError?
             if let jsonArray = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.MutableContainers, error: &error){
                 if let error = error {
@@ -55,5 +57,6 @@ class ShowsAPI {
                 }
             }
         })
+        searchTask.resume()
     }
 }
