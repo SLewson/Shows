@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'bad_login' => 'bad_login#login'
+
   devise_for :users
   root "home#show"
   resources :shows, only: [:index, :show] do
@@ -11,11 +13,6 @@ Rails.application.routes.draw do
   get "profiles/remove_favorite/:id" => "profiles#remove_favorite"
   get "profiles/get_favorites" => "profiles#get_favorites"
   resources :profiles, only: [:index, :show]
-
-  namespace :api do
-    devise_for :users
-    resources :recipes, :only=>[:index, :show]
-  end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
