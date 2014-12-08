@@ -169,7 +169,7 @@
         <!--Item-->
         <scene sceneID="GVo-Yt-0F3">
             <objects>
-                <viewController id="wlU-MA-bik" sceneMemberID="viewController">
+                <viewController id="wlU-MA-bik" customClass="AddShowViewController" customModule="Shows" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Hae-PY-T2E"/>
                         <viewControllerLayoutGuide type="bottom" id="KV2-K3-xUI"/>
@@ -181,6 +181,9 @@
                             <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="vjg-rD-vyu">
                                 <rect key="frame" x="0.0" y="64" width="600" height="44"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="wlU-MA-bik" id="Vyb-3z-rhi"/>
+                                </connections>
                             </searchBar>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="qoY-91-Zxj">
                                 <rect key="frame" x="290" y="290" width="20" height="20"/>
@@ -213,6 +216,10 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="Nn4-lB-ytG"/>
+                    <connections>
+                        <outlet property="searchBar" destination="vjg-rD-vyu" id="0yW-fu-dEO"/>
+                        <outlet property="statusLabel" destination="0QA-8L-MqA" id="YkL-fw-fNO"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8rr-JS-sTe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
