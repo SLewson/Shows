@@ -5,10 +5,10 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Login View Controller-->
         <scene sceneID="M2L-LZ-xml">
             <objects>
-                <viewController id="V8Y-oq-tdf" sceneMemberID="viewController">
+                <viewController id="V8Y-oq-tdf" customClass="LoginViewController" customModule="Shows" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="U2O-0O-BZG"/>
                         <viewControllerLayoutGuide type="bottom" id="piE-P5-Lgc"/>
@@ -27,6 +27,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
+                                    <action selector="didPressLogin:" destination="V8Y-oq-tdf" eventType="touchUpInside" id="y0R-5P-35c"/>
                                     <segue destination="eZ3-NT-mks" kind="show" id="5hw-Kx-WV3"/>
                                 </connections>
                             </button>
@@ -83,6 +84,10 @@
                             <constraint firstAttribute="centerY" secondItem="zX1-in-egP" secondAttribute="centerY" constant="33" id="xP0-zn-8vV"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="password" destination="hRu-LN-Ivj" id="ZLE-Du-o2c"/>
+                        <outlet property="username" destination="rKW-Qx-asm" id="MWU-U9-HOv"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ENJ-pH-Cu1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -124,7 +129,7 @@
             </objects>
             <point key="canvasLocation" x="0.0" y="13"/>
         </scene>
-        <!--Item-->
+        <!--Shows Table View Controller-->
         <scene sceneID="8IZ-bE-ts7">
             <objects>
                 <tableViewController id="FO3-mU-qOW" customClass="ShowsTableViewController" customModule="Shows" customModuleProvider="target" sceneMemberID="viewController">
@@ -157,7 +162,7 @@
                             <outlet property="delegate" destination="FO3-mU-qOW" id="bM4-Ts-mrX"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Item" id="MnM-8Z-cFq"/>
+                    <tabBarItem key="tabBarItem" systemItem="favorites" id="MnM-8Z-cFq"/>
                     <connections>
                         <segue destination="nKk-OG-tAa" kind="show" identifier="show_show" id="AzY-Es-Cpc"/>
                     </connections>
@@ -166,7 +171,7 @@
             </objects>
             <point key="canvasLocation" x="752" y="-233"/>
         </scene>
-        <!--Item-->
+        <!--Add Show View Controller-->
         <scene sceneID="GVo-Yt-0F3">
             <objects>
                 <viewController id="wlU-MA-bik" customClass="AddShowViewController" customModule="Shows" customModuleProvider="target" sceneMemberID="viewController">
@@ -215,7 +220,7 @@
                             <constraint firstAttribute="centerX" secondItem="0QA-8L-MqA" secondAttribute="centerX" id="tie-vb-whd"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="Nn4-lB-ytG"/>
+                    <tabBarItem key="tabBarItem" selectedImage="favorites" systemItem="search" id="Nn4-lB-ytG"/>
                     <connections>
                         <outlet property="searchBar" destination="vjg-rD-vyu" id="0yW-fu-dEO"/>
                         <outlet property="statusLabel" destination="0QA-8L-MqA" id="YkL-fw-fNO"/>
@@ -244,4 +249,7 @@
             <point key="canvasLocation" x="1486" y="-658"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="favorites" width="18" height="17"/>
+    </resources>
 </document>

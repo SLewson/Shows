@@ -1,4 +1,6 @@
 class EpisodesController < ApplicationController
+  before_action :authenticate_user!
+
   def index
     @episodes = Show.find(params[:show_id]).episodes
     render json: @episodes

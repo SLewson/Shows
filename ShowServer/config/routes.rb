@@ -1,16 +1,21 @@
 Rails.application.routes.draw do
 
   devise_for :users
-    root "home#show"
-    resources :shows, only: [:index, :show] do
-      resources :episodes, only: [:index, :show]
-    end
-    get "shows/search/:name"=>"shows#search"
-    get "users/index"=>"users#index"
-    get "profiles/add_favorite/:id" => "profiles#add_favorite"
-    get "profiles/remove_favorite/:id" => "profiles#remove_favorite"
-    get "profiles/get_favorites" => "profiles#get_favorites"
-    resources :profiles, only: [:index, :show]
+  root "home#show"
+  resources :shows, only: [:index, :show] do
+    resources :episodes, only: [:index, :show]
+  end
+  get "shows/search/:name"=>"shows#search"
+  get "users/index"=>"users#index"
+  get "profiles/add_favorite/:id" => "profiles#add_favorite"
+  get "profiles/remove_favorite/:id" => "profiles#remove_favorite"
+  get "profiles/get_favorites" => "profiles#get_favorites"
+  resources :profiles, only: [:index, :show]
+
+  namespace :api do
+    devise_for :users
+    resources :recipes, :only=>[:index, :show]
+  end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

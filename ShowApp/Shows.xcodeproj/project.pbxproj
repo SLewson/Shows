@@ -12,6 +12,8 @@
 		162B95A61A0C5EA600A8D66F /* ShowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 162B95A51A0C5EA600A8D66F /* ShowViewController.swift */; };
 		16D9D46E1A24036F000DADEB /* Show.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16D9D46D1A24036F000DADEB /* Show.swift */; };
 		16DB79581A12A66D0048FE38 /* ShowsAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16DB79571A12A66D0048FE38 /* ShowsAPI.swift */; };
+		6D3877DC1A351BDF00704077 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D3877DB1A351BDF00704077 /* LoginViewController.swift */; };
+		6D3877DE1A351E7900704077 /* UserManagement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D3877DD1A351E7900704077 /* UserManagement.swift */; };
 		6D8214C91A08562F00F81ADB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D8214C81A08562F00F81ADB /* AppDelegate.swift */; };
 		6D8214CB1A08562F00F81ADB /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D8214CA1A08562F00F81ADB /* FirstViewController.swift */; };
 		6D8214CD1A08562F00F81ADB /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D8214CC1A08562F00F81ADB /* SecondViewController.swift */; };
@@ -37,6 +39,8 @@
 		162B95A51A0C5EA600A8D66F /* ShowViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowViewController.swift; sourceTree = "<group>"; };
 		16D9D46D1A24036F000DADEB /* Show.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Show.swift; sourceTree = "<group>"; };
 		16DB79571A12A66D0048FE38 /* ShowsAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowsAPI.swift; sourceTree = "<group>"; };
+		6D3877DB1A351BDF00704077 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = ../LoginViewController.swift; sourceTree = "<group>"; };
+		6D3877DD1A351E7900704077 /* UserManagement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserManagement.swift; sourceTree = "<group>"; };
 		6D8214C31A08562F00F81ADB /* Shows.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Shows.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6D8214C71A08562F00F81ADB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6D8214C81A08562F00F81ADB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -90,10 +94,12 @@
 			isa = PBXGroup;
 			children = (
 				1628D2F71A351CF200A99B14 /* AddShowViewController.swift */,
+				6D3877DB1A351BDF00704077 /* LoginViewController.swift */,
 				6D8214C81A08562F00F81ADB /* AppDelegate.swift */,
 				6D8214CA1A08562F00F81ADB /* FirstViewController.swift */,
 				6D8214CC1A08562F00F81ADB /* SecondViewController.swift */,
 				6D8214CE1A08562F00F81ADB /* Main.storyboard */,
+				6D3877DD1A351E7900704077 /* UserManagement.swift */,
 				162B95A11A0C5B9C00A8D66F /* ShowsTableViewController.swift */,
 				162B95A51A0C5EA600A8D66F /* ShowViewController.swift */,
 				6D8214D11A08562F00F81ADB /* Images.xcassets */,
@@ -230,11 +236,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6D3877DC1A351BDF00704077 /* LoginViewController.swift in Sources */,
 				162B95A21A0C5B9C00A8D66F /* ShowsTableViewController.swift in Sources */,
 				6D8214CD1A08562F00F81ADB /* SecondViewController.swift in Sources */,
 				6D8214C91A08562F00F81ADB /* AppDelegate.swift in Sources */,
 				16DB79581A12A66D0048FE38 /* ShowsAPI.swift in Sources */,
 				6D8214CB1A08562F00F81ADB /* FirstViewController.swift in Sources */,
+				6D3877DE1A351E7900704077 /* UserManagement.swift in Sources */,
 				16D9D46E1A24036F000DADEB /* Show.swift in Sources */,
 				162B95A61A0C5EA600A8D66F /* ShowViewController.swift in Sources */,
 				1628D2F81A351CF200A99B14 /* AddShowViewController.swift in Sources */,
