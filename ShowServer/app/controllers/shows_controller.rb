@@ -17,12 +17,12 @@ class ShowsController < ApplicationController
     logger.info "Searching for: #{params[:name]}"
     if @show = Show.find_by(name: params[:name].titleize)
       logger.info "   Found: #{params[:name]}"
-      redirect_to @show
+      redirect_to(action: 'show', id: @show.id, user_token: params[:user_token])
     else
       logger.info "   Not Found: #{params[:name]}"
       @id = Show.load_from_hulu(params[:name])
       logger.info "Returned id: #{@id}"
-      redirect_to Show.find_by(hulu_id: @id)
+      redirect_to(action: 'show', id: Show.find_by(hulu_id: @id).id, user_token: params[:user_token])
     end
   end
 

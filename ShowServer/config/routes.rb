@@ -7,8 +7,8 @@ Rails.application.routes.draw do
   resources :shows, only: [:index, :show] do
     resources :episodes, only: [:index, :show]
   end
-  get "shows/search/:name"=>"shows#search"
-  get "users/index"=>"users#index"
+  get "shows/search/:name/"=>"shows#search"
+  #get "users/index"=>"users#index"
   get "profiles/add_favorite/:id" => "profiles#add_favorite"
   get "profiles/remove_favorite/:id" => "profiles#remove_favorite"
   get "profiles/get_favorites" => "profiles#get_favorites"
