@@ -15,6 +15,11 @@ class UserManagement {
         }
     }
     
+    class func resetAuthToken() {
+        //NSUserDefaults.resetStandardUserDefaults()
+        NSUserDefaults.standardUserDefaults().removeObjectForKey("AUTH_TOKEN")
+    }
+    
     class func isLoggedIn() -> Bool {
         // I'm suspicious of this...
         return getAuthToken() != nil
