@@ -28,7 +28,6 @@
                                 </state>
                                 <connections>
                                     <action selector="didPressLogin:" destination="V8Y-oq-tdf" eventType="touchUpInside" id="y0R-5P-35c"/>
-                                    <segue destination="eZ3-NT-mks" kind="show" id="5hw-Kx-WV3"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vkB-I7-I7b">

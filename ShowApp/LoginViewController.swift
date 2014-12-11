@@ -26,7 +26,10 @@ class LoginViewController: UIViewController {
     
 
     @IBAction func didPressLogin(sender: AnyObject) {
-        UserManagement.sendRequest(username: username.text, password: password.text)
+        UserManagement.loginWith(username: username.text, password: password.text) {
+            (success: Bool) in
+            println("Success: \(success)")
+        }
     }
     
     /*

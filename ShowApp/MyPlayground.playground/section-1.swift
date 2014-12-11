@@ -1,21 +1,9 @@
-import Foundation
+// Playground - noun: a place where people can play
 
-class UserManagement {
-    
-    class func setAuthToken(authToken: String) {
-        NSUserDefaults.standardUserDefaults().setValue(authToken, forKey: "AUTH_TOKEN")
-    }
-    
-    class func getAuthToken() -> String? {
-        if let token = NSUserDefaults.standardUserDefaults().valueForKey("AUTH_TOKEN") as? String {
-            return token
-        }
-        else {
-            return nil
-        }
-    }
-    
-    class func loginWith(#username: String, password: String, completionHandler: (success: Bool)->()) {
+import UIKit
+
+class MyRequestController {
+    func sendRequest() {
         /* Configure session, choose between:
         * defaultSessionConfiguration
         * ephemeralSessionConfiguration
@@ -34,8 +22,8 @@ class UserManagement {
         
         var URL = NSURL(string: "http://localhost:3000/bad_login")
         let URLParams = [
-            "email": username,
-            "password": password,
+            "email": "email@email.com",
+            "password": "password",
         ]
         URL = self.NSURLByAppendingQueryParameters(URL, queryParameters: URLParams)
         let request = NSMutableURLRequest(URL: URL!)
@@ -47,39 +35,10 @@ class UserManagement {
                 // Success
                 let statusCode = (response as NSHTTPURLResponse).statusCode
                 println("URL Session Task Succeeded: HTTP \(statusCode)")
-                
-                var error: NSError?
-                if let response = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.MutableContainers, error: &error){
-                    if let success = response.objectForKey("success") {
-                        // If success is here, login failed
-                        if let success_bool = success as? Bool {
-                            completionHandler(success: success_bool)
-                        }
-                        else {
-                            completionHandler(success: false)
-                        }
-                    }
-                    else {
-                        // Login successful
-                        if let authtok = response.objectForKey("authentication_token") {
-                            if let authtok_string = authtok as? String {
-                                self.setAuthToken(authtok_string)
-                                completionHandler(success: true)
-                            }
-                            else {
-                                completionHandler(success: false)
-                            }
-                        }
-                        else {
-                            completionHandler(success: false)
-                        }
-                    }
-                }
             }
             else {
                 // Failure
                 println("URL Session Task Failed: %@", error.localizedDescription);
-                completionHandler(success: false)
             }
         })
         task.resume()
@@ -92,7 +51,7 @@ class UserManagement {
     @param queryParameters The input dictionary.
     @return The created parameters string.
     */
-    class func stringFromQueryParameters(queryParameters : Dictionary<String, String>) -> String {
+    func stringFromQueryParameters(queryParameters : Dictionary<String, String>) -> String {
         var parts: [String] = []
         for (name, value) in queryParameters {
             var part = NSString(format: "%@=%@",
@@ -109,7 +68,7 @@ class UserManagement {
     @param queryParameters The query parameter dictionary to add.
     @return A new NSURL.
     */
-    class func NSURLByAppendingQueryParameters(URL : NSURL!, queryParameters : Dictionary<String, String>) -> NSURL {
+    func NSURLByAppendingQueryParameters(URL : NSURL!, queryParameters : Dictionary<String, String>) -> NSURL {
         let URLString : NSString = NSString(format: "%@?%@", URL.absoluteString!, self.stringFromQueryParameters(queryParameters))
         return NSURL(string: URLString)!
     }
