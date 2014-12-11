@@ -41,4 +41,8 @@ class ProfilesController < ApplicationController
     render json: current_user.shows
   end
 
+  def refresh
+    render json: '{"apicall":"refresh","status":"success"}'
+  end
+
 end

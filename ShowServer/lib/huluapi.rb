@@ -70,6 +70,12 @@ class HuluApi
                   "show_id" => show_id,
                   "total" => total_only}
     url = build_url(TYPE_VIDEOS, parameters)
+    logger.info ("**************************")
+    logger.info ("**************************")
+    logger.info (url)
+    logger.info ("**************************")
+    logger.info ("**************************")
+    
     return execute_get_for_url(url)
   end
 

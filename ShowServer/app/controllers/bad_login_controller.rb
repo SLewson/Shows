@@ -10,5 +10,5 @@ class BadLoginController < ApplicationController
     else
       render json: @user
     end
-  end
+  end  
 end

@@ -7,7 +7,10 @@ Rails.application.routes.draw do
   resources :shows, only: [:index, :show] do
     resources :episodes, only: [:index, :show]
   end
+
   get "shows/search/:name/"=>"shows#search"
+  get "profiles/refresh"=>"profiles#refresh"
+
   #get "users/index"=>"users#index"
   get "profiles/add_favorite/:id" => "profiles#add_favorite"
   get "profiles/remove_favorite/:id" => "profiles#remove_favorite"
@@ -16,6 +19,7 @@ Rails.application.routes.draw do
   get "episodes/add_watched/:id" => "episodes#add_watched"
   get "episodes/remove_watched/:id" => "episodes#remove_watched"
   get "episodes/get_watched" => "episodes#get_watched"
+  
   resources :profiles, only: [:index, :show]
 
   # The priority is based upon order of creation: first created -> highest priority.

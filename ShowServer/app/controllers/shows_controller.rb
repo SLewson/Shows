@@ -25,5 +25,4 @@ class ShowsController < ApplicationController
       redirect_to(action: 'show', id: Show.find_by(hulu_id: @id).id, user_token: params[:user_token])
     end
   end
-
 end
