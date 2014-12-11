@@ -11,4 +11,30 @@ class EpisodesController < ApplicationController
     render json: @episode
   end
 
+  def add_watched
+    @episode = Episode.find(params[:id])
+
+    if !current_user.episodes.include?(@episode)
+      current_user.episodes << @episode
+      render json: '{"apicall":"add_watched","status":"success"}'
+    else
+      render json: '{"apicall":"add_watched","status":"failure"}'
+    end
+  end
+
+  def remove_watched
+    @episode = Episode.find(params[:id])
+
+    if current_user.episodes.include?(@episode)
+      current_user.episodes.delete(@episode)
+      render json: '{"apicall":"remove_watched","status":"success"}'
+    else
+      render json: '{"apicall":"remove_watched","status":"failure"}'
+    end
+  end
+
+  def get_watched
+    render json: current_user.episodes
+  end
+
 end

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141208205550) do
+ActiveRecord::Schema.define(version: 20141211205910) do
 
   create_table "episodes", force: true do |t|
     t.integer  "show_id"
@@ -25,6 +25,16 @@ ActiveRecord::Schema.define(version: 20141208205550) do
   end
 
   add_index "episodes", ["show_id"], name: "index_episodes_on_show_id"
+
+  create_table "episodes_users", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "episode_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "episodes_users", ["episode_id"], name: "index_episodes_users_on_episode_id"
+  add_index "episodes_users", ["user_id"], name: "index_episodes_users_on_user_id"
 
   create_table "shows", force: true do |t|
     t.string   "name"

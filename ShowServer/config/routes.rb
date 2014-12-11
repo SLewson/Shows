@@ -12,6 +12,10 @@ Rails.application.routes.draw do
   get "profiles/add_favorite/:id" => "profiles#add_favorite"
   get "profiles/remove_favorite/:id" => "profiles#remove_favorite"
   get "profiles/get_favorites" => "profiles#get_favorites"
+
+  get "episodes/add_watched/:id" => "episodes#add_watched"
+  get "episodes/remove_watched/:id" => "episodes#remove_watched"
+  get "episodes/get_watched" => "episodes#get_watched"
   resources :profiles, only: [:index, :show]
 
   # The priority is based upon order of creation: first created -> highest priority.
