@@ -346,7 +346,7 @@
     </object>
     <object type="LMREQUEST" id="z128">
         <attribute name="uuid" type="string">27219BE0-D74F-43C8-9886-50B30C879981</attribute>
-        <attribute name="url" type="string">http://localhost:3000/episodes/add_watched/2/?user_token=jwh-ov1Q2CzWuQJy2HrG</attribute>
+        <attribute name="url" type="string">http://localhost:3000/episodes/add_watched/807/?user_token=jwh-ov1Q2CzWuQJy2HrG</attribute>
         <attribute name="storecookies" type="bool">1</attribute>
         <attribute name="sendcookies" type="bool">1</attribute>
         <attribute name="redirectmethod" type="bool">0</attribute>
