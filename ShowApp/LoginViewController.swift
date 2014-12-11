@@ -28,7 +28,17 @@ class LoginViewController: UIViewController {
     @IBAction func didPressLogin(sender: AnyObject) {
         UserManagement.loginWith(username: username.text, password: password.text) {
             (success: Bool) in
-            println("Success: \(success)")
+            if success {
+                dispatch_async(dispatch_get_main_queue(), {
+                    self.performSegueWithIdentifier("show_app", sender: self)
+                })
+            }
+            else {
+                // TODO
+                // SHOW LOGIN FAILED THING
+                // LOOK INTO UIALERTVIEW
+                // THIS WILL ALSO HAVE TO BE ON MAIN THREAD
+            }
         }
     }
     

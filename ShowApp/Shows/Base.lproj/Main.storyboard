@@ -86,11 +86,12 @@
                     <connections>
                         <outlet property="password" destination="hRu-LN-Ivj" id="ZLE-Du-o2c"/>
                         <outlet property="username" destination="rKW-Qx-asm" id="MWU-U9-HOv"/>
+                        <segue destination="eZ3-NT-mks" kind="show" identifier="show_app" id="WJ2-Cv-JxW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ENJ-pH-Cu1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1626" y="13"/>
+            <point key="canvasLocation" x="-1566" y="13"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="eqE-3k-LRh">

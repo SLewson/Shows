@@ -15,6 +15,11 @@ class UserManagement {
         }
     }
     
+    class func isLoggedIn() -> Bool {
+        // I'm suspicious of this...
+        return getAuthToken() != nil
+    }
+    
     class func loginWith(#username: String, password: String, completionHandler: (success: Bool)->()) {
         /* Configure session, choose between:
         * defaultSessionConfiguration
