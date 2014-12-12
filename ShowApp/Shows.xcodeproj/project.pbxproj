@@ -23,6 +23,7 @@
 		6D8214D21A08562F00F81ADB /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6D8214D11A08562F00F81ADB /* Images.xcassets */; };
 		6D8214D51A08562F00F81ADB /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6D8214D31A08562F00F81ADB /* LaunchScreen.xib */; };
 		6D8214E11A08562F00F81ADB /* ShowsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D8214E01A08562F00F81ADB /* ShowsTests.swift */; };
+		6DC4F70C1A3B6479003A7133 /* Episode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DC4F70B1A3B6479003A7133 /* Episode.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +57,7 @@
 		6D8214DA1A08562F00F81ADB /* ShowsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ShowsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6D8214DF1A08562F00F81ADB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6D8214E01A08562F00F81ADB /* ShowsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowsTests.swift; sourceTree = "<group>"; };
+		6DC4F70B1A3B6479003A7133 /* Episode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Episode.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +115,7 @@
 				6D8214C61A08562F00F81ADB /* Supporting Files */,
 				16DB79571A12A66D0048FE38 /* ShowsAPI.swift */,
 				16D9D46D1A24036F000DADEB /* Show.swift */,
+				6DC4F70B1A3B6479003A7133 /* Episode.swift */,
 			);
 			path = Shows;
 			sourceTree = "<group>";
@@ -249,6 +252,7 @@
 				16DB79581A12A66D0048FE38 /* ShowsAPI.swift in Sources */,
 				6D8214CB1A08562F00F81ADB /* FirstViewController.swift in Sources */,
 				6D6229F51A3B599B00325782 /* EpisodeTableViewCell.swift in Sources */,
+				6DC4F70C1A3B6479003A7133 /* Episode.swift in Sources */,
 				6D3877DE1A351E7900704077 /* UserManagement.swift in Sources */,
 				16D9D46E1A24036F000DADEB /* Show.swift in Sources */,
 				160327901A3B5C910042F082 /* EpisodesTableViewController.swift in Sources */,

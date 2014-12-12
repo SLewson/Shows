@@ -11,6 +11,26 @@ import UIKit
 class EpisodesTableViewController: UITableViewController {
 
     public var show: Show?
+    public var episodes: [Episode] = []
+
+    
+//    override func viewDidAppear(_animated: Bool) {
+//        let showsAPI = ShowsAPI()
+//        
+//        showsAPI.getFavorites() {(shows: [Show]?, error: NSError?) in
+//            if let shows = shows {
+//                dispatch_async(dispatch_get_main_queue(), { () -> Void in
+//                    self.shows = shows
+//                    self.tableView.reloadData()
+//                    println("Got some \(shows.count) shows mang")
+//                })
+//            }
+//            else {
+//                dispatch_async(dispatch_get_main_queue(), { () -> Void in
+//                    println("Failed to get favorites")
+//                })
+//            }
+//        }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,6 +49,22 @@ class EpisodesTableViewController: UITableViewController {
         if let safe_show = show {
             println("got show \(safe_show.name)")
             self.title = safe_show.name
+            
+            let showsAPI = ShowsAPI()
+            showsAPI.getEpisodes(safe_show.id) {(episodes: [Episode]?, error: NSError?) in
+                if let episodes = episodes {
+                    dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                        self.episodes = episodes
+                        self.tableView.reloadData()
+                        println("Got some \(episodes.count) episodes")
+                    })
+                }
+                else {
+                    dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                        println("Failed to get episodes")
+                    })
+                }
+            }
         }
     }
 
@@ -50,7 +86,7 @@ class EpisodesTableViewController: UITableViewController {
         // Return the number of rows in the section.
         
         
-        return 10
+        return episodes.count
     }
     
     ////////
@@ -62,7 +98,15 @@ class EpisodesTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCellWithIdentifier("episodecell", forIndexPath: indexPath) as UITableViewCell
         
         if let episodeCell = cell as? EpisodeTableViewCell {
-            println("configure me")
+            episodeCell.episodeName.text = episodes[indexPath.row].name
+            episodeCell.episode = episodes[indexPath.row]
+            
+            if (episodes[indexPath.row].watched == true) {
+                episodeCell.watchedSwitch.on = true;
+            }
+            else {
+                episodeCell.watchedSwitch.on = false;
+            }
         }
 
         // Configure the cell...

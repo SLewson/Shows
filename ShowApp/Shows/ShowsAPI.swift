@@ -15,6 +15,96 @@ class ShowsAPI {
     init() {
         session = NSURLSession.sharedSession()
     }
+    
+    func addEpisode(episode: Episode, completionHandler:(episode: Episode?, error: NSError?)->()) -> Void {
+        let task1 = session.dataTaskWithURL(NSURL(string: "http://localhost:3000/episodes/add_watched/\(episode.id)/?user_token=\(UserManagement.getAuthToken()!)")!, completionHandler: { (data, response, error) -> Void in
+            
+            var error: NSError?
+            if let jsonArray = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.MutableContainers, error: &error){
+                if let error = error {
+                    print(error)
+                    completionHandler(episode: nil, error: error)
+                }
+                if let showArray = jsonArray as? NSDictionary {
+                    if let status = showArray["status"] as? NSString {
+                        if status == "success" {
+                            println("success")
+                            completionHandler(episode: episode, error: nil)
+                        }
+                        else {
+                            println("failure 1")
+                            completionHandler(episode: nil, error: error)
+                        }
+                    }
+                    else {
+                        println("failure 2")
+                        completionHandler(episode: nil, error: error)
+                    }
+                }
+                else {
+                    println("failure 3")
+                    completionHandler(episode: nil, error: error)
+                }
+            }
+        })
+        task1.resume()
+    }
+    
+    func removeEpisode(episode: Episode, completionHandler:(episode: Episode?, error: NSError?)->()) -> Void {
+        let task1 = session.dataTaskWithURL(NSURL(string: "http://localhost:3000/episodes/remove_watched/\(episode.id)/?user_token=\(UserManagement.getAuthToken()!)")!, completionHandler: { (data, response, error) -> Void in
+            
+            var error: NSError?
+            if let jsonArray = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.MutableContainers, error: &error){
+                if let error = error {
+                    print(error)
+                    completionHandler(episode: nil, error: error)
+                }
+                if let showArray = jsonArray as? NSDictionary {
+                    if let status = showArray["status"] as? NSString {
+                        if status == "success" {
+                            println("success")
+                            completionHandler(episode: episode, error: nil)
+                        }
+                        else {
+                            println("failure 1")
+                            completionHandler(episode: nil, error: error)
+                        }
+                    }
+                    else {
+                        println("failure 2")
+                        completionHandler(episode: nil, error: error)
+                    }
+                }
+                else {
+                    println("failure 3")
+                    completionHandler(episode: nil, error: error)
+                }
+            }
+        })
+        task1.resume()
+    }
+    
+    func getEpisodes(id:Int, completionHandler:(episodes: [Episode]?, error: NSError?)->()) -> Void {
+        let task1 = session.dataTaskWithURL(NSURL(string: "http://localhost:3000/shows/\(id)/episodes?user_token=\(UserManagement.getAuthToken()!)")!, completionHandler: { (data, response, error) -> Void in
+            
+            var error: NSError?
+            if let jsonArray = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.MutableContainers, error: &error){
+                if let error = error {
+                    print(error)
+                    completionHandler(episodes: nil, error: error)
+                }
+                if let episodeArray = jsonArray as? NSArray {
+                    var episodes: [Episode] = []
+                    for showJsonDict in episodeArray {
+                        episodes.append(Episode(jsonDict: showJsonDict as NSDictionary))
+                    }
+                    completionHandler(episodes: episodes, error: nil)
+                }
+            }
+        })
+        task1.resume()
+    }
+
 
     func getFavorites(completionHandler:(shows: [Show]?, error: NSError?)->()) -> Void {
         let task1 = session.dataTaskWithURL(NSURL(string: "http://localhost:3000/profiles/get_favorites/?user_token=\(UserManagement.getAuthToken()!)")!, completionHandler: { (data, response, error) -> Void in

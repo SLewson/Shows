@@ -9,6 +9,7 @@
 import UIKit
 
 class EpisodeTableViewCell: UITableViewCell {
+    public var episode: Episode?
     
     @IBOutlet weak var watchedSwitch: UISwitch!
     @IBOutlet weak var episodeName: UILabel!
@@ -25,5 +26,35 @@ class EpisodeTableViewCell: UITableViewCell {
 
     @IBAction func didToggleEpisodeWatched(sender: AnyObject) {
         println("toggled")
+        let showsAPI = ShowsAPI()
+        
+        if (watchedSwitch.on) {
+            showsAPI.addEpisode(episode!) {(episode: Episode?, error: NSError?) in
+                if let episode = episode {
+                    dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                        println("added episode")
+                    })
+                }
+                else {
+                    dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                        println("did not add episode")
+                    })
+                }
+            }
+        }
+        else {
+            showsAPI.removeEpisode(episode!) {(episode: Episode?, error: NSError?) in
+                if let episode = episode {
+                    dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                        println("removed episode")
+                    })
+                }
+                else {
+                    dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                        println("did not remove episode")
+                    })
+                }
+            }
+        }
     }
 }
