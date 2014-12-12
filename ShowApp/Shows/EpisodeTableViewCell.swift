@@ -9,7 +9,9 @@
 import UIKit
 
 class EpisodeTableViewCell: UITableViewCell {
-
+    
+    @IBOutlet weak var watchedSwitch: UISwitch!
+    @IBOutlet weak var episodeName: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -21,4 +23,7 @@ class EpisodeTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
 
+    @IBAction func didToggleEpisodeWatched(sender: AnyObject) {
+        println("toggled")
+    }
 }

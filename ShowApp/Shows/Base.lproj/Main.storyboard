@@ -179,11 +179,43 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="QwX-oN-iFU">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="episodecell" id="QwX-oN-iFU" customClass="EpisodeTableViewCell" customModule="Shows" customModuleProvider="target">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="QwX-oN-iFU" id="DMA-4F-y1B">
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Ty-25-cwb">
+                                            <rect key="frame" x="8" y="12" width="422" height="21"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="422" id="9ke-zk-qqZ"/>
+                                                <constraint firstAttribute="height" constant="21" id="hLL-PO-yaZ"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wVm-40-DWe">
+                                            <rect key="frame" x="543" y="6" width="51" height="31"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="49" id="Khy-WA-QP7"/>
+                                                <constraint firstAttribute="height" constant="31" id="Wza-AI-kSd"/>
+                                            </constraints>
+                                            <connections>
+                                                <action selector="didToggleEpisodeWatched:" destination="QwX-oN-iFU" eventType="valueChanged" id="mMY-sB-FQi"/>
+                                            </connections>
+                                        </switch>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="wVm-40-DWe" firstAttribute="trailing" secondItem="DMA-4F-y1B" secondAttribute="trailingMargin" id="NIb-HJ-vYK"/>
+                                        <constraint firstItem="8Ty-25-cwb" firstAttribute="leading" secondItem="DMA-4F-y1B" secondAttribute="leadingMargin" id="iAT-UF-2Jp"/>
+                                        <constraint firstAttribute="centerY" secondItem="wVm-40-DWe" secondAttribute="centerY" constant="0.5" id="mje-0A-br9"/>
+                                        <constraint firstAttribute="centerY" secondItem="8Ty-25-cwb" secondAttribute="centerY" constant="0.5" id="y05-vP-atI"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="episodeName" destination="8Ty-25-cwb" id="Xm6-gD-W4N"/>
+                                    <outlet property="watchedSwitch" destination="wVm-40-DWe" id="ukI-uk-Xeg"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -194,7 +226,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tDQ-NO-a1k" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1445" y="-234"/>
+            <point key="canvasLocation" x="1445" y="-235"/>
         </scene>
         <!--Add Show View Controller-->
         <scene sceneID="GVo-Yt-0F3">
