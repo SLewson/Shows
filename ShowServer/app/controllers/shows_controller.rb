@@ -30,4 +30,11 @@ class ShowsController < ApplicationController
       end
     end
   end
+
+  def search_v2
+    Show.load_from_hulu(params[:name])
+    connection = ActiveRecord::Base.connection
+    results = connection.execute("SELECT 'shows'.* FROM 'shows' WHERE 'shows'.'name' LIKE '%#{params[:name]}%'")
+    render json: results
+  end
 end

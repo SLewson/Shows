@@ -5,7 +5,7 @@
     <databaseInfo>
         <version>134481920</version>
         <UUID>8F4044EA-9F54-4AFE-A8AB-4C84B9CD33DB</UUID>
-        <nextObjectID>143</nextObjectID>
+        <nextObjectID>145</nextObjectID>
         <metadata>
             <plist version="1.0">
                 <dict>
@@ -191,16 +191,16 @@
     </object>
     <object type="LMREQUEST" id="z114">
         <attribute name="uuid" type="string">61441797-F008-4258-BAEF-C3BC56602149</attribute>
-        <attribute name="url" type="string">http://localhost:3000/shows/search/mistresses?user_token=jwh-ov1Q2CzWuQJy2HrG</attribute>
+        <attribute name="url" type="string">http://localhost:3000/shows/search/new%20girl?user_token=jwh-ov1Q2CzWuQJy2HrG</attribute>
         <attribute name="storecookies" type="bool">1</attribute>
         <attribute name="sendcookies" type="bool">1</attribute>
         <attribute name="redirectmethod" type="bool">0</attribute>
         <attribute name="redirectauthorization" type="bool">0</attribute>
         <attribute name="method" type="string">GET</attribute>
         <attribute name="followredirects" type="bool">1</attribute>
-        <attribute name="order" type="int64">0</attribute>
+        <attribute name="order" type="int64">4</attribute>
         <attribute name="name" type="string">Search</attribute>
-        <relationship name="parent" type="0/1" destination="LMREQUESTTREEITEM" idrefs="z125"></relationship>
+        <relationship name="parent" type="0/1" destination="LMREQUESTTREEITEM" idrefs="z124"></relationship>
         <relationship name="children" type="0/0" destination="LMREQUESTTREEITEM"></relationship>
         <relationship name="headers" type="0/0" destination="LMKEYVALUE" idrefs="z113"></relationship>
     </object>
@@ -319,17 +319,7 @@
         <attribute name="order" type="int64">2</attribute>
         <attribute name="name" type="string">Shows</attribute>
         <relationship name="parent" type="0/1" destination="LMREQUESTTREEITEM"></relationship>
-        <relationship name="children" type="0/0" destination="LMREQUESTTREEITEM" idrefs="z110 z105 z111 z135"></relationship>
-        <relationship name="bodyparameters" type="0/0" destination="LMKEYVALUE"></relationship>
-        <relationship name="headers" type="0/0" destination="LMKEYVALUE"></relationship>
-        <relationship name="urlparameters" type="0/0" destination="LMKEYVALUE"></relationship>
-    </object>
-    <object type="LMREQUESTGROUP" id="z125">
-        <attribute name="uuid" type="string">1DF7513C-3F04-4634-A84A-E9219FF4C5D8</attribute>
-        <attribute name="order" type="int64">5</attribute>
-        <attribute name="name" type="string">Search</attribute>
-        <relationship name="parent" type="0/1" destination="LMREQUESTTREEITEM"></relationship>
-        <relationship name="children" type="0/0" destination="LMREQUESTTREEITEM" idrefs="z114"></relationship>
+        <relationship name="children" type="0/0" destination="LMREQUESTTREEITEM" idrefs="z110 z105 z111 z135 z114 z145"></relationship>
         <relationship name="bodyparameters" type="0/0" destination="LMKEYVALUE"></relationship>
         <relationship name="headers" type="0/0" destination="LMKEYVALUE"></relationship>
         <relationship name="urlparameters" type="0/0" destination="LMKEYVALUE"></relationship>
@@ -416,7 +406,7 @@
     </object>
     <object type="LMREQUEST" id="z134">
         <attribute name="uuid" type="string">8B3C9FCA-C88D-48BE-9400-16FDAB664D8D</attribute>
-        <attribute name="url" type="string">http://localhost:3000/episodes/remove_watched/1/?user_token=jwh-ov1Q2CzWuQJy2HrG</attribute>
+        <attribute name="url" type="string">http://localhost:3000/episodes/remove_watched/2/?user_token=jwh-ov1Q2CzWuQJy2HrG</attribute>
         <attribute name="storecookies" type="bool">1</attribute>
         <attribute name="sendcookies" type="bool">1</attribute>
         <attribute name="redirectmethod" type="bool">0</attribute>
@@ -456,7 +446,7 @@
     </object>
     <object type="LMREQUEST" id="z137">
         <attribute name="uuid" type="string">9BB7C249-65D0-4379-B173-FDCCEBCF4274</attribute>
-        <attribute name="url" type="string">http://m.hulu.com/search?dp_identifier=hulu\u2600query=test%2520\u2600items_per_page=10\u2600page=1</attribute>
+        <attribute name="url" type="string">http://m.hulu.com/search?dp_identifier=hulu\u2600query=csi\u2600items_per_page=10\u2600page=1</attribute>
         <attribute name="storecookies" type="bool">1</attribute>
         <attribute name="sendcookies" type="bool">1</attribute>
         <attribute name="redirectmethod" type="bool">0</attribute>
@@ -501,7 +491,7 @@
     </object>
     <object type="LMREQUEST" id="z141">
         <attribute name="uuid" type="string">3FB50250-E714-4986-89A4-1BD06373A6E1</attribute>
-        <attribute name="url" type="string">http://m.hulu.com/videos?dp_id=hulu\u2600order_by=name%20asc\u2600limit=10\u2600show_id=19458\u2600page=2\u2600total=0</attribute>
+        <attribute name="url" type="string">http://m.hulu.com/videos?dp_id=hulu\u2600order_by=name%20asc\u2600limit=30\u2600show_id=19458\u2600page=2\u2600total=0</attribute>
         <attribute name="storecookies" type="bool">1</attribute>
         <attribute name="sendcookies" type="bool">1</attribute>
         <attribute name="redirectmethod" type="bool">0</attribute>
@@ -513,5 +503,30 @@
         <relationship name="parent" type="0/1" destination="LMREQUESTTREEITEM" idrefs="z139"></relationship>
         <relationship name="children" type="0/0" destination="LMREQUESTTREEITEM"></relationship>
         <relationship name="headers" type="0/0" destination="LMKEYVALUE" idrefs="z140"></relationship>
+    </object>
+    <object type="LMKEYVALUE" id="z144">
+        <attribute name="value" type="string"></attribute>
+        <attribute name="order" type="int64">0</attribute>
+        <attribute name="name" type="string"></attribute>
+        <attribute name="enabled" type="bool">1</attribute>
+        <relationship name="groupforbodyparameters" type="0/1" destination="LMREQUESTGROUP"></relationship>
+        <relationship name="groupforheaders" type="0/1" destination="LMREQUESTGROUP"></relationship>
+        <relationship name="groupforurlparameters" type="0/1" destination="LMREQUESTGROUP"></relationship>
+        <relationship name="request" type="0/1" destination="LMREQUEST" idrefs="z145"></relationship>
+    </object>
+    <object type="LMREQUEST" id="z145">
+        <attribute name="uuid" type="string">AD9EECE7-E78F-4324-A797-2D6BBE5075F7</attribute>
+        <attribute name="url" type="string">http://localhost:3000/shows/search_v2/top%20chef?user_token=jwh-ov1Q2CzWuQJy2HrG</attribute>
+        <attribute name="storecookies" type="bool">1</attribute>
+        <attribute name="sendcookies" type="bool">1</attribute>
+        <attribute name="redirectmethod" type="bool">0</attribute>
+        <attribute name="redirectauthorization" type="bool">0</attribute>
+        <attribute name="method" type="string">GET</attribute>
+        <attribute name="followredirects" type="bool">1</attribute>
+        <attribute name="order" type="int64">5</attribute>
+        <attribute name="name" type="string">Search_v2</attribute>
+        <relationship name="parent" type="0/1" destination="LMREQUESTTREEITEM" idrefs="z124"></relationship>
+        <relationship name="children" type="0/0" destination="LMREQUESTTREEITEM"></relationship>
+        <relationship name="headers" type="0/0" destination="LMKEYVALUE" idrefs="z144"></relationship>
     </object>
 </database>

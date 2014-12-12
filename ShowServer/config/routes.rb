@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   end
 
   get "shows/search/:name/"=>"shows#search"
+  get "shows/search_v2/:name/"=>"shows#search_v2"
   get "profiles/refresh"=>"profiles#refresh"
 
   #get "users/index"=>"users#index"
@@ -19,7 +20,7 @@ Rails.application.routes.draw do
   get "episodes/add_watched/:id" => "episodes#add_watched"
   get "episodes/remove_watched/:id" => "episodes#remove_watched"
   get "episodes/get_watched" => "episodes#get_watched"
-  
+
   resources :profiles, only: [:index, :show]
 
   # The priority is based upon order of creation: first created -> highest priority.
