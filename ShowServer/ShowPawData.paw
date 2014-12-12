@@ -231,7 +231,7 @@
     </object>
     <object type="LMREQUEST" id="z117">
         <attribute name="uuid" type="string">C76F0DA2-DA03-4997-AED2-BDE2C27B88AA</attribute>
-        <attribute name="url" type="string">http://localhost:3000/profiles/add_favorite/1/?user_token=jwh-ov1Q2CzWuQJy2HrG</attribute>
+        <attribute name="url" type="string">http://localhost:3000/profiles/add_favorite/4/?user_token=jwh-ov1Q2CzWuQJy2HrG</attribute>
         <attribute name="storecookies" type="bool">1</attribute>
         <attribute name="sendcookies" type="bool">1</attribute>
         <attribute name="redirectmethod" type="bool">0</attribute>
@@ -516,7 +516,7 @@
     </object>
     <object type="LMREQUEST" id="z145">
         <attribute name="uuid" type="string">AD9EECE7-E78F-4324-A797-2D6BBE5075F7</attribute>
-        <attribute name="url" type="string">http://localhost:3000/shows/search_v2/the?user_token=jwh-ov1Q2CzWuQJy2HrG</attribute>
+        <attribute name="url" type="string">http://localhost:3000/shows/search_v2/rr?user_token=jwh-ov1Q2CzWuQJy2HrG</attribute>
         <attribute name="storecookies" type="bool">1</attribute>
         <attribute name="sendcookies" type="bool">1</attribute>
         <attribute name="redirectmethod" type="bool">0</attribute>
