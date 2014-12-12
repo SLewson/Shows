@@ -9,8 +9,7 @@
 import UIKit
 
 class ShowViewController: UIViewController {
-    @IBOutlet weak var descriptionLabel: UILabel!
-
+    @IBOutlet weak var episodeTable: UITableView!
     public var show: Show?
     
     override func viewDidLoad() {
@@ -21,8 +20,9 @@ class ShowViewController: UIViewController {
     
     override func viewDidAppear(animated: Bool) {
         if let show = show {
-            print(show.description)
-            descriptionLabel.text = show.description
+            // get episode list
+            // turn episodes into array
+            // episodeTable.dataSource = array
         }
 
     }
@@ -30,8 +30,7 @@ class ShowViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-    }
-    
+    }    
 
     /*
     // MARK: - Navigation
