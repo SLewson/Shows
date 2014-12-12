@@ -22,7 +22,12 @@ class ShowsController < ApplicationController
       logger.info "   Not Found: #{params[:name]}"
       @id = Show.load_from_hulu(params[:name])
       logger.info "Returned id: #{@id}"
-      redirect_to(action: 'show', id: Show.find_by(hulu_id: @id).id, user_token: params[:user_token])
+
+      if Show.find_by(hulu_id: @id).present?
+        redirect_to(action: 'show', id: Show.find_by(hulu_id: @id).id, user_token: params[:user_token])
+      else
+        render json: '{"status":"failure","message":"No show found"}'
+      end
     end
   end
 end

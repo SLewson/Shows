@@ -9,18 +9,20 @@
 import UIKit
 
 class ShowViewController: UIViewController {
+    @IBOutlet weak var descriptionLabel: UILabel!
 
     public var show: Show?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
     }
     
     override func viewDidAppear(animated: Bool) {
         if let show = show {
             print(show.description)
+            descriptionLabel.text = show.description
         }
 
     }

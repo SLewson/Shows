@@ -12,20 +12,27 @@ class ShowsTableViewController: UITableViewController {
 
     var shows: [Show] = []
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        var showsApi = ShowsAPI()
-        showsApi.getAllShows() {(shows: [Show]?, error: NSError?) in
+    override func viewDidAppear(_animated: Bool) {
+        let showsAPI = ShowsAPI()
+        
+        showsAPI.getFavorites() {(shows: [Show]?, error: NSError?) in
             if let shows = shows {
-                self.shows = shows
                 dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                    self.shows = shows
                     self.tableView.reloadData()
+                    println("Got some \(shows.count) shows mang")
+                })
+            }
+            else {
+                dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                    println("Failed to get favorites")
                 })
             }
         }
-
-        
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
         
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false

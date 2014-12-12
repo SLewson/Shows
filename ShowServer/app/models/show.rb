@@ -35,6 +35,8 @@ def self.load_episodes(show_id, show)
   logger.info "retrieving episodes for show with id #{show_id}"
   episodes = Hash.from_xml(@hulu_api.get_videos_for_show_by_id(show_id, 10, "name%20asc", 1, 0))
 
+  return if episodes.nil? || episodes['videos'].nil?
+
   episodes['videos']['video'].each do |episode|
     unless Episode.find_by(hulu_video_id: episode['video_id']).present?
       ep_id = episode['video_id']

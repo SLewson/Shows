@@ -15,9 +15,9 @@ class ShowsAPI {
     init() {
         session = NSURLSession.sharedSession()
     }
-    
-    func getAllShows(completionHandler:(shows: [Show]?, error: NSError?)->()) -> Void {
-        let task1 = session.dataTaskWithURL(NSURL(string: "http://localhost:3000/shows")!, completionHandler: { (data, response, error) -> Void in
+
+    func getFavorites(completionHandler:(shows: [Show]?, error: NSError?)->()) -> Void {
+        let task1 = session.dataTaskWithURL(NSURL(string: "http://localhost:3000/profiles/get_favorites/?user_token=\(UserManagement.getAuthToken()!)")!, completionHandler: { (data, response, error) -> Void in
             
             var error: NSError?
             if let jsonArray = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.MutableContainers, error: &error){
@@ -35,25 +35,63 @@ class ShowsAPI {
             }
         })
         task1.resume()
-    }
+    }    
     
-    func getSearchResults(query: String, completionHandler: (shows: [Show]?, error: NSError?)->()) -> Void {
-        println("getSearchResults")
-        let searchTask = session.dataTaskWithURL(NSURL(string: "http://localhost:3000/shows/search/arrow")!, completionHandler: {
-            (data, response, error) -> Void in
-            println(response)
+    func addFavorite(show: Show, completionHandler:(show: Show?, error: NSError?)->()) -> Void {
+        let task1 = session.dataTaskWithURL(NSURL(string: "http://localhost:3000/profiles/add_favorite/\(show.id)/?user_token=\(UserManagement.getAuthToken()!)")!, completionHandler: { (data, response, error) -> Void in
+            
             var error: NSError?
             if let jsonArray = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.MutableContainers, error: &error){
                 if let error = error {
                     print(error)
-                    completionHandler(shows: nil, error: error)
+                    completionHandler(show: nil, error: error)
                 }
-                if let showArray = jsonArray as? NSArray {
-                    var shows: [Show] = []
-                    for showJsonDict in showArray {
-                        shows.append(Show(jsonDict: showJsonDict as NSDictionary))
+                if let showArray = jsonArray as? NSDictionary {
+                    if let status = showArray["status"] as? NSString {
+                        if status == "success" {
+                            println("success")
+                            completionHandler(show: show, error: nil)
+                        }
+                        else {
+                            println("failure 1")
+                            completionHandler(show: nil, error: error)
+                        }
                     }
-                    completionHandler(shows: shows, error: nil)
+                    else {
+                        println("failure 2")
+                        completionHandler(show: nil, error: error)
+                    }
+                }
+                else {
+                    println("failure 3")
+                    completionHandler(show: nil, error: error)
+                }
+            }
+        })
+        task1.resume()
+    }
+
+    func getSearchResults(query: String, completionHandler: (show: Show?, error: NSError?)->()) -> Void {
+        let safe_query = query.stringByReplacingOccurrencesOfString(" ", withString: "%20", options: NSStringCompareOptions.LiteralSearch, range: nil)
+
+        let searchTask = session.dataTaskWithURL(NSURL(string: "http://localhost:3000/shows/search/\(safe_query)?user_token=\(UserManagement.getAuthToken()!)")!, completionHandler: {
+            (data, response, error) -> Void in
+            var error: NSError?
+            if let jsonDict = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.MutableContainers, error: &error){
+                if let error = error {
+                    completionHandler(show: nil, error: error)
+                }
+                if let jsonDict = jsonDict as? NSDictionary {
+                    if let status = jsonDict["status"] {
+                        completionHandler(show: nil, error: error)
+                    }
+                    else {
+                        var show = Show(jsonDict: jsonDict)
+                        completionHandler(show: show, error: nil)
+                    }
+                }
+                else {
+                    completionHandler(show: nil, error: error)
                 }
             }
         })
