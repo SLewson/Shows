@@ -1,46 +1,34 @@
 //
-//  ShowsTableViewController.swift
+//  EpisodesTableViewController.swift
 //  Shows
 //
-//  Created by Spencer Lewson on 11/6/14.
+//  Created by Spencer Lewson on 12/12/14.
 //  Copyright (c) 2014 Ian Mitchell. All rights reserved.
 //
 
 import UIKit
 
-class ShowsTableViewController: UITableViewController {
+class EpisodesTableViewController: UITableViewController {
 
-    var shows: [Show] = []
-    
-    override func viewDidAppear(_animated: Bool) {
-        let showsAPI = ShowsAPI()
-        
-        showsAPI.getFavorites() {(shows: [Show]?, error: NSError?) in
-            if let shows = shows {
-                dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                    self.shows = shows
-                    self.tableView.reloadData()
-                    println("Got some \(shows.count) shows mang")
-                })
-            }
-            else {
-                dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                    println("Failed to get favorites")
-                })
-            }
-        }
-    }
+    public var show: Show?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        self.title = "set me to episode name"
+        super.viewDidAppear(animated)
         
-
+        if let safe_show = show {
+            println("got show \(safe_show.name)")
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -53,39 +41,25 @@ class ShowsTableViewController: UITableViewController {
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Potentially incomplete method implementation.
         // Return the number of sections.
-        return 1
+        return 0
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete method implementation.
         // Return the number of rows in the section.
-        return shows.count
+        return 0
     }
 
-    
+    /*
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath) as UITableViewCell
-        cell.textLabel!.text = shows[indexPath.row].name
 
-        print("array size: \(shows.count)")
         // Configure the cell...
 
         return cell
     }
-    
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        self.performSegueWithIdentifier("show_episodes", sender: indexPath)
-    }
-    
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if (segue.identifier == "show_episodes") {
-            var nextController = segue.destinationViewController as EpisodesTableViewController
-            var indexPath = sender as NSIndexPath
-            nextController.show = shows[indexPath.row]
-        }
-    }
-    
-    
+    */
+
     /*
     // Override to support conditional editing of the table view.
     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {

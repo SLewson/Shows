@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		160327901A3B5C910042F082 /* EpisodesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1603278F1A3B5C910042F082 /* EpisodesTableViewController.swift */; };
 		1628D2F81A351CF200A99B14 /* AddShowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1628D2F71A351CF200A99B14 /* AddShowViewController.swift */; };
 		162B95A21A0C5B9C00A8D66F /* ShowsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 162B95A11A0C5B9C00A8D66F /* ShowsTableViewController.swift */; };
 		162B95A61A0C5EA600A8D66F /* ShowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 162B95A51A0C5EA600A8D66F /* ShowViewController.swift */; };
@@ -35,6 +36,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1603278F1A3B5C910042F082 /* EpisodesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EpisodesTableViewController.swift; sourceTree = "<group>"; };
 		1628D2F71A351CF200A99B14 /* AddShowViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddShowViewController.swift; path = ../AddShowViewController.swift; sourceTree = "<group>"; };
 		162B95A11A0C5B9C00A8D66F /* ShowsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowsTableViewController.swift; sourceTree = "<group>"; };
 		162B95A51A0C5EA600A8D66F /* ShowViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowViewController.swift; sourceTree = "<group>"; };
@@ -104,6 +106,7 @@
 				6D3877DD1A351E7900704077 /* UserManagement.swift */,
 				162B95A11A0C5B9C00A8D66F /* ShowsTableViewController.swift */,
 				162B95A51A0C5EA600A8D66F /* ShowViewController.swift */,
+				1603278F1A3B5C910042F082 /* EpisodesTableViewController.swift */,
 				6D6229F41A3B599B00325782 /* EpisodeTableViewCell.swift */,
 				6D8214D11A08562F00F81ADB /* Images.xcassets */,
 				6D8214D31A08562F00F81ADB /* LaunchScreen.xib */,
@@ -248,6 +251,7 @@
 				6D6229F51A3B599B00325782 /* EpisodeTableViewCell.swift in Sources */,
 				6D3877DE1A351E7900704077 /* UserManagement.swift in Sources */,
 				16D9D46E1A24036F000DADEB /* Show.swift in Sources */,
+				160327901A3B5C910042F082 /* EpisodesTableViewController.swift in Sources */,
 				162B95A61A0C5EA600A8D66F /* ShowViewController.swift in Sources */,
 				1628D2F81A351CF200A99B14 /* AddShowViewController.swift in Sources */,
 			);
@@ -376,7 +380,6 @@
 				INFOPLIST_FILE = Shows/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "Shows/Shows-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -389,7 +392,6 @@
 				INFOPLIST_FILE = Shows/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "Shows/Shows-Bridging-Header.h";
 			};
 			name = Release;
 		};
