@@ -89,7 +89,7 @@
     </object>
     <object type="LMREQUEST" id="z105">
         <attribute name="uuid" type="string">17F99CC2-2D67-4EF8-AE0F-4A4E7A51498F</attribute>
-        <attribute name="url" type="string">http://localhost:3000/shows/1/episodes?user_token=jwh-ov1Q2CzWuQJy2HrG</attribute>
+        <attribute name="url" type="string">http://localhost:3000/shows/48/episodes?user_token=jwh-ov1Q2CzWuQJy2HrG</attribute>
         <attribute name="storecookies" type="bool">1</attribute>
         <attribute name="sendcookies" type="bool">1</attribute>
         <attribute name="redirectmethod" type="bool">0</attribute>
@@ -191,7 +191,7 @@
     </object>
     <object type="LMREQUEST" id="z114">
         <attribute name="uuid" type="string">61441797-F008-4258-BAEF-C3BC56602149</attribute>
-        <attribute name="url" type="string">http://localhost:3000/shows/search/test%20show?user_token=jwh-ov1Q2CzWuQJy2HrG</attribute>
+        <attribute name="url" type="string">http://localhost:3000/shows/search/mistresses?user_token=jwh-ov1Q2CzWuQJy2HrG</attribute>
         <attribute name="storecookies" type="bool">1</attribute>
         <attribute name="sendcookies" type="bool">1</attribute>
         <attribute name="redirectmethod" type="bool">0</attribute>

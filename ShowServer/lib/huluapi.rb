@@ -37,7 +37,8 @@ class HuluApi
   def execute_get_for_url(url)
     Rails.logger.info "\n\n --- HULU API ---\n\nHitting url: \n#{url}\n\n"
     source = Net::HTTP.get_response(URI.parse(url))
-    return source.body
+    Rails.logger.info "EXECUTE_GET_FOR_URL: #{source.code}"
+    return [source.code, source.body]
   end
 
   def get_shows(limit, order_by, total)
@@ -62,7 +63,11 @@ class HuluApi
   end
 
   def get_videos_for_show_by_id(show_id, limit, order_by, page, total_only)
-    Rails.logger.info "get_videos_for_show_by_id"
+    Rails.logger.info "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@"
+    Rails.logger.info "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@"
+    Rails.logger.info "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@"
+    
+    Rails.logger.info "get_videos_for_show_by_id page: #{page}"
     parameters = {"order_by" => order_by,
                   "limit" => limit,
                   "show_id" => show_id,
@@ -70,12 +75,7 @@ class HuluApi
                   "show_id" => show_id,
                   "total" => total_only}
     url = build_url(TYPE_VIDEOS, parameters)
-    logger.info ("**************************")
-    logger.info ("**************************")
-    logger.info (url)
-    logger.info ("**************************")
-    logger.info ("**************************")
-    
+
     return execute_get_for_url(url)
   end
 
