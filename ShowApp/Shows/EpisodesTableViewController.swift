@@ -23,11 +23,12 @@ class EpisodesTableViewController: UITableViewController {
     }
     
     override func viewDidAppear(animated: Bool) {
-        self.title = "set me to episode name"
+        self.title = "Loading..."
         super.viewDidAppear(animated)
         
         if let safe_show = show {
             println("got show \(safe_show.name)")
+            self.title = safe_show.name
         }
     }
 
@@ -48,16 +49,20 @@ class EpisodesTableViewController: UITableViewController {
         // #warning Incomplete method implementation.
         // Return the number of rows in the section.
         
-        // TO DO SET ME TO NUMBER OF EPISODES
+        
         return 10
     }
+    
+    ////////
+    ///  SET ME ^^^^^^^^^^
+    ////
 
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("episodecell", forIndexPath: indexPath) as UITableViewCell
         
         if let episodeCell = cell as? EpisodeTableViewCell {
-            println("do somethign")
+            println("configure me")
         }
 
         // Configure the cell...
