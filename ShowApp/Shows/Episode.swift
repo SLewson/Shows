@@ -24,9 +24,9 @@ class Episode {
     convenience init(jsonDict: NSDictionary) {
         let id = jsonDict.objectForKey("id") as? Int
         let name = jsonDict.objectForKey("name") as? String
-        let huluId = jsonDict.objectForKey("hulu_id") as? Int
-        let watched = jsonDict.objectForKey("watched") as? Bool
+        let huluId = jsonDict.objectForKey("hulu_video_id") as? Int
+        //let watched = jsonDict.objectForKey("watched") as? Bool
         
-        self.init(id: id!, name: name!, huluId: huluId!, watched: watched!)
+        self.init(id: id!, name: name!, huluId: huluId!, watched: false)
     }
 }
