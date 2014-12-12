@@ -63,10 +63,6 @@ class HuluApi
   end
 
   def get_videos_for_show_by_id(show_id, limit, order_by, page, total_only)
-    Rails.logger.info "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@"
-    Rails.logger.info "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@"
-    Rails.logger.info "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@"
-    
     Rails.logger.info "get_videos_for_show_by_id page: #{page}"
     parameters = {"order_by" => order_by,
                   "limit" => limit,

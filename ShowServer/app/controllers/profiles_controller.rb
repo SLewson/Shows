@@ -42,7 +42,10 @@ class ProfilesController < ApplicationController
   end
 
   def refresh
-    render json: '{"apicall":"refresh","status":"success"}'
+    current_user.shows.each do |fav_show|
+      Show.load_all_episodes(fav_show.hulu_id, fav_show)
+    end
+    render json: '{"status":"success"}'
   end
 
 end

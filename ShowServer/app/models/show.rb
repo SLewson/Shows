@@ -32,6 +32,8 @@ class Show < ActiveRecord::Base
   # import episodes
     logger.info "\n\n ----- LOAD EPISODES #{show_id}-----\n\n"
 
+    @hulu_api = HuluApi.new
+    
     logger.info "retrieving episodes for show with id #{show_id}"
     hulu_response = @hulu_api.get_videos_for_show_by_id(show_id, 10, "name%20asc", page, 0)
     episodes = Hash.from_xml(hulu_response[1])
