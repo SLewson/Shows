@@ -191,7 +191,7 @@
     </object>
     <object type="LMREQUEST" id="z114">
         <attribute name="uuid" type="string">61441797-F008-4258-BAEF-C3BC56602149</attribute>
-        <attribute name="url" type="string">http://localhost:3000/shows/search/new%20girl?user_token=jwh-ov1Q2CzWuQJy2HrG</attribute>
+        <attribute name="url" type="string">http://localhost:3000/shows/search/arrow?user_token=jwh-ov1Q2CzWuQJy2HrG</attribute>
         <attribute name="storecookies" type="bool">1</attribute>
         <attribute name="sendcookies" type="bool">1</attribute>
         <attribute name="redirectmethod" type="bool">0</attribute>
@@ -516,7 +516,7 @@
     </object>
     <object type="LMREQUEST" id="z145">
         <attribute name="uuid" type="string">AD9EECE7-E78F-4324-A797-2D6BBE5075F7</attribute>
-        <attribute name="url" type="string">http://localhost:3000/shows/search_v2/top%20chef?user_token=jwh-ov1Q2CzWuQJy2HrG</attribute>
+        <attribute name="url" type="string">http://localhost:3000/shows/search_v2/the?user_token=jwh-ov1Q2CzWuQJy2HrG</attribute>
         <attribute name="storecookies" type="bool">1</attribute>
         <attribute name="sendcookies" type="bool">1</attribute>
         <attribute name="redirectmethod" type="bool">0</attribute>
